@@ -1,0 +1,29 @@
+[package]
+name = "cvra-rs"
+version = "0.1.0"
+edition = "2024"
+description = "reader and writer for the .cvra scene format"
+
+[dependencies]
+zstd = { version = "0.13", optional = true }
+
+[features]
+default = ["zstd"]
+zstd = ["dep:zstd"]
+
+[lints.rust]
+deprecated = "allow"
+
+[lints.clippy]
+unwrap_used = { level = "deny", priority = 127 }
+too_many_arguments = { level = "allow", priority = 127 }
+needless_update = { level = "allow", priority = 127 }
+multiple_crate_versions = { level = "allow", priority = 127 }
+cargo_common_metadata = { level = "allow", priority = 127 }
+large_enum_variant = { level = "allow", priority = 127 }
+type_complexity = { level = "allow", priority = 127 }
+
+# groups
+complexity = { level = "warn", priority = 1 }
+perf = { level = "warn", priority = 2 }
+cargo = "warn"

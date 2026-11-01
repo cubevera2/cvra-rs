@@ -1,0 +1,24 @@
+[build]
+rustflags = ["-C", "debuginfo=0"]
+
+[target.x86_64-pc-windows-msvc]
+linker = "rust-lld.exe"
+rustflags = [
+    "-C", "debuginfo=0",
+    "-C", "link-arg=/OPT:REF",
+    "-C", "link-arg=/OPT:ICF",
+    "-C", "link-arg=/THREADS:1",
+]
+
+[env]
+RUST_LOG = """
+debug,\
+bevy_render=info,\
+bevy_shader=info,\
+offset_allocator=info,\
+bevy_replicon=info,\
+bevy_app=info,\
+lightyear_netcode=info,\
+lightyear_transport::packet::priority_manager=off,\
+lightyear_inputs::client=info\
+"""
