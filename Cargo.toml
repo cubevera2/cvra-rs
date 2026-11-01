@@ -3,6 +3,8 @@ name = "cvra-rs"
 version = "0.1.0"
 edition = "2024"
 description = "reader and writer for the .cvra scene format"
+license = "MIT"
+repository = "https://github.com/cubevera2/cvra-rs"
 
 [dependencies]
 zstd = { version = "0.13", optional = true }
